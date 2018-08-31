@@ -1,37 +1,62 @@
 # -*- coding: utf-8 -*-
 
-"""
-This module provides functions for searching the courses
-in command line interface by pysaint
-
-"""
 from __future__ import absolute_import
 import click
 
 import boilerplate
 
 
-@click.command()
-@click.option("--string", "-s", default='Hello World', type=(str, ), )
-def single_print(example_string):
-    """
-    Example Usage
-
-    >> single_print --string="hi there~"
-    :return:
-    """
-    boilerplate.test(example_string)
+@click.group()
+def main():
+    pass
 
 
 @click.command()
-@click.option("--string", "-s", default='Hello World', type=(str, list, tuple), multiple=True)
-def multiple_print(example_string):
+@click.option("--string", default='Hello World')
+def single_print(string):
     """
     Example Usage
 
-    >> multiple_print --string="hello" --string="world"
-    :param example_string:
+        >>> boiler single_print --string="hi there~"
+
     :return:
     """
-    boilerplate.test("\n".join(example_string))
+    boilerplate.test(string)
 
+
+@click.command()
+@click.option("--string", "-s", default='Hello World', type=str, multiple=True)
+def multiple_print(string):
+    """
+    Example Usage
+
+        >>> boiler multiple_print --string="hello" --string="world"
+
+        >>> boiler multi_print --string="hello" -sworld
+
+    :param string:
+    :return:
+    """
+    boilerplate.test(" ".join(string))
+
+
+@click.command()
+@click.option("--id", type=str, multiple=False)
+@click.option("--password", type=str, multiple=False)
+def login(id, password):
+    """
+    Example Usage
+
+        >>> boiler login --id='adam' --password='smith'
+
+    :param id:
+    :param password:
+    :return:
+    """
+    res = boilerplate.login(id, password)
+    click.echo("{}".format(res))
+
+
+main.add_command(single_print)
+main.add_command(multiple_print)
+main.add_command(login)
