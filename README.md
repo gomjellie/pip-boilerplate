@@ -15,6 +15,7 @@ first make deploy_venv and install twine(deploy tool)
 
 ```sh
 virtualenv deploy_venv -p python3
+source deploy_venv/bin/activate
 pip install twine
 
 ```
