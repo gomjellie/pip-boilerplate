@@ -3,11 +3,11 @@ from __future__ import absolute_import
 
 from pkg_resources import get_distribution
 
-from boilerplate.api import test, login
+from boilerplate.api import print_string, login
 
 __version__ = get_distribution('boilerplate').version
 
 __all__ = [
-    'test',
+    'print_string',
     'login',
 ]

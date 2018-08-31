@@ -21,7 +21,7 @@ def single_print(string):
 
     :return:
     """
-    boilerplate.test(string)
+    boilerplate.print_string(string)
 
 
 @click.command()
@@ -37,7 +37,7 @@ def multiple_print(string):
     :param string:
     :return:
     """
-    boilerplate.test(" ".join(string))
+    boilerplate.print_string(" ".join(string))
 
 
 @click.command()

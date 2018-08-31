@@ -3,7 +3,7 @@ import os
 
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
-VERSION = '1.0.00'
+VERSION = '1.0.0'
 
 
 def get_requirements(filename):
@@ -17,7 +17,7 @@ setup(
     install_requires=get_requirements('requirements.txt'),
     tests_require=get_requirements('test-requirements.txt'),
     version=VERSION,
-    description='~YOUR DESCRIPTION HERE~',
+    description='YOUR DESCRIPTION HERE',
     long_description=open(os.path.join(ROOT, 'README.md')).read(),
     long_description_content_type='text/markdown',
     author='YOUR NAME HERE',
@@ -46,4 +46,5 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
+    zip_safe=False,
 )

@@ -3,7 +3,7 @@
 """
 
 
-def test(example_string):
+def print_string(example_string):
     """
     after checking example_string type, just print example_string out
     :param example_string: put any string you want
@@ -11,7 +11,7 @@ def test(example_string):
     :return:
     """
     if type(example_string) not in [str]:
-        raise ValueError("test() got wrong arguments example_string")
+        raise ValueError("print_string() got wrong arguments example_string")
 
     print(example_string)
 
