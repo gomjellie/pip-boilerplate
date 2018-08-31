@@ -14,6 +14,7 @@ def print_string(example_string):
         raise ValueError("print_string() got wrong arguments example_string")
 
     print(example_string)
+    return example_string
 
 
 def login(id, password):

@@ -5,7 +5,7 @@ deploy python package with ease
 ## install
 
 ```sh
-python setup.py install
+pip install .
 
 ```
 
