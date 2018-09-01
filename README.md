@@ -2,6 +2,14 @@
 
 deploy python package with ease
 
+## run Test
+
+```sh
+
+python setup.py test
+
+```
+
 ## install
 
 ```sh
